@@ -1,7 +1,7 @@
 const path = require('path');
-
+const data = require('./database/seed.js')
 module.exports = {
-  entry: './client/src/index.js',
+  entry: './client/src/index.jsx',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, './client/dist'),
@@ -11,7 +11,7 @@ module.exports = {
 
   rules: [
     {
-      test: /\.m?js$/,
+      test: /\.(js|jsx)$/,
       exclude: /(node_modules|bower_components)/,
       use: {
         loader: 'babel-loader',
