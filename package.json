@@ -1,17 +1,32 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
+  "name": "photo-carousel-proxy",
+  "description": "> Project description",
   "author": "",
-  "license": "",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
-  }
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yumnoms/photo-carousel-proxy.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/yumnoms/photo-carousel-proxy/issues"
+  },
+  "homepage": "https://github.com/yumnoms/photo-carousel-proxy#readme"
 }
