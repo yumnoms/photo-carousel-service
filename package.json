@@ -6,15 +6,26 @@
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -d --watch",
+    "start": "nodemon --exec babel-node server/index.js"
+  },
   "dependencies": {
-    "lodash": "^4.17.15"
+    "install": "^0.13.0",
+    "lodash": "^4.17.15",
+    "mysql2": "^2.0.1",
+    "npm": "^6.13.1",
+    "sequelize": "^5.21.2"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.6",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "nodemon": "^2.0.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
