@@ -1,17 +1,47 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
+  "name": "photo-carousel-proxy",
+  "description": "> Project description",
   "author": "",
-  "license": "",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -d --watch",
+    "start": "nodemon --exec babel-node server/server.js",
+    "seed": "node database/seed.js",
+    "jester" : "jest"
   },
   "dependencies": {
+    "faker": "^4.1.0",
+    "install": "^0.13.0",
+    "lodash": "^4.17.15",
+    "mysql2": "^2.0.1",
+    "npm": "^6.13.1",
+    "sequelize": "^5.21.2"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
-  }
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.6",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yumnoms/photo-carousel-service.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/yumnoms/photo-carousel-service/issues"
+  },
+  "homepage": "https://github.com/yumnoms/photo-carousel-service#readme"
 }
