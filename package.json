@@ -9,8 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -d --watch",
-    "start": "nodemon --exec babel-node server/index.js",
-    "seed": "node database/seed.js"
+    "start": "nodemon --exec babel-node server/server.js",
+    "seed": "node database/seed.js",
+    "jester" : "jest"
   },
   "dependencies": {
     "faker": "^4.1.0",
@@ -27,6 +28,7 @@
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.6",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "jest": "^24.9.0",
     "nodemon": "^2.0.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
@@ -35,11 +37,11 @@
   "main": ".eslintrc.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yumnoms/photo-carousel-proxy.git"
+    "url": "git+https://github.com/yumnoms/photo-carousel-service.git"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/yumnoms/photo-carousel-proxy/issues"
+    "url": "https://github.com/yumnoms/photo-carousel-service/issues"
   },
-  "homepage": "https://github.com/yumnoms/photo-carousel-proxy#readme"
+  "homepage": "https://github.com/yumnoms/photo-carousel-service#readme"
 }

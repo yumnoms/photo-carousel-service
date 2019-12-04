@@ -1,5 +1,4 @@
 const path = require('path');
-const data = require('./database/seed.js')
 module.exports = {
   entry: './client/src/index.jsx',
   output: {
@@ -9,18 +8,18 @@ module.exports = {
   module: {
 
 
-  rules: [
-    {
-      test: /\.(js|jsx)$/,
-      exclude: /(node_modules|bower_components)/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ["@babel/preset-react"]
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-react']
+          }
         }
       }
-    }
-  ]
-}
+    ]
+  }
 
 };

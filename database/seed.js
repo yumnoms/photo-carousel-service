@@ -1,12 +1,12 @@
 const faker = require('faker');
-const db = require('./index.js')
+const db = require('./index.js');
 
 const seed = {
   users: [],
   businesses: [],
   images: []
+};
 
-}
 for (let i = 0; i < 100; i += 1) {
 
   const users = {
@@ -16,23 +16,32 @@ for (let i = 0; i < 100; i += 1) {
   };
 
   const images = {
-    image_url: faker.image.food(),
-    helpfull_count: faker.random.number(10),
-    not_helpfull_Count: faker.random.number(10),
+    imageUrl: faker.image.food(),
+    helpFullCount: faker.random.number(10),
+    notHelpfullCount: faker.random.number(10),
     description: faker.random.alphaNumeric(30),
     date: faker.date.past(2),
-    business_id: faker.random.number(30),
-    users_id: faker.random.number(10)
+    businessId: 9,
+    usersId: faker.random.number(10)
   };
 
   const businesses = {
     name: faker.company.companyName(),
   };
 
-  seed.users.push(users),
-  seed.images.push(images),
-  seed.businesses.push(businesses)
+  seed.users.push(users);
+  seed.images.push(images);
+  seed.businesses.push(businesses);
 }
 
-module.exports.seed=seed;
+db.Users.sync({ force: false }).then(() => {
+  db.Users.bulkCreate(seed.users, { logging: false });
+});
+db.Businesses.sync({ force: false }).then(() => {
+  db.Businesses.bulkCreate(seed.businesses, { logging: false });
+});
+db.Images.sync({ force: false }).then(() => {
+  db.Images.bulkCreate(seed.images, { logging: false});
+});
+module.exports.seed = seed;
 
