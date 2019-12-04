@@ -21,7 +21,7 @@ for (let i = 0; i < 100; i += 1) {
     notHelpfullCount: faker.random.number(10),
     description: faker.random.alphaNumeric(30),
     date: faker.date.past(2),
-    businessId: 9,
+    businessId: 9, //Hardcoded for now, will change once I have foreign key references working.
     usersId: faker.random.number(10)
   };
 

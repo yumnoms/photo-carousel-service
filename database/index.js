@@ -31,25 +31,28 @@ const Images = sequelize.define('images', {
 });
 
 
+//This is called when server is running
+module.exports = {
+  initialize: () => {
+    sequelize
+      .authenticate()
+      .then(() => {
+        console.log('Connection has been established successfully.');
+        return sequelize.sync({ force: false });
+      })
+      .then(() => {
+        console.log('Database tables have been synced');
+      })
+      .catch(err => {
+        console.error('Unable to connect to the database:', err);
+      });
 
-module.exports.initialize = () => {
-  sequelize
-    .authenticate()
-    .then(() => {
-      console.log('Connection has been established successfully.');
-      return sequelize.sync({ force: false });
-    })
-    .then(() => {
-      console.log('Database tables have been synced');
-    })
-    .catch(err => {
-      console.error('Unable to connect to the database:', err);
-    });
-
+  },
+  Users,
+  Businesses,
+  Images
 };
 
-module.exports.Users = Users;
-module.exports.Businesses = Businesses;
-module.exports.Images = Images;
+
 
 
