@@ -3,7 +3,6 @@ const controller = require('./controller');
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = 3000;
 
 app.use('/page', express.static(path.join(__dirname, '../client/dist')));
 app.get('/api/carousel/:id/', (req, res) => {
@@ -17,5 +16,9 @@ app.get('/api/carousel/:id/', (req, res) => {
   res.status(200).send(req.params);
 
 });
+app.get('/', (req, res) => {
 
+  res.send(200);
+
+});
 module.exports = app;
