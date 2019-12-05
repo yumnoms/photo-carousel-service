@@ -39,18 +39,19 @@ module.exports = {
       .then(() => {
         console.log('Connection has been established successfully.');
         return sequelize.sync({ force: false });
-      })
-      .then(() => {
-        console.log('Database tables have been synced');
-      })
-      .catch(err => {
-        console.error('Unable to connect to the database:', err);
       });
+      // .then(() => {
+      //   console.log('Database tables have been synced');
+      // })
+      // .catch(err => {
+      //   console.error('Unable to connect to the database:', err);
+      // });
 
   },
   Users,
   Businesses,
-  Images
+  Images,
+  sequelize
 };
 
 
