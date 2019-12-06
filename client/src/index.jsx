@@ -1,41 +1,70 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var ImageList = require('./components/ImageList.jsx');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ImageList from './components/ImageList.jsx';
+import Popup from './components/Popup.jsx';
 
 class App extends React.Component {
-  constructor() {
-    super()
-    this.scroll = this.scroll.bind(this)
+  constructor(props) {
+    super(props);
+    this.state = {
+      showPopup: false,
+      images: [
+        {
+         id : 1,
+         url : "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/aurora.jpg",
+        },
+        {
+          id : 2,
+          url : "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/canyon.jpg",
+        },
+        {
+          id : 3,
+          url :  "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/city.jpg",
+        },
+        {
+          id : 4,
+          url :  "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/desert.jpg",
+        },
+        {
+          id : 5,
+          url :  "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/mountains.jpg",
+        },
+        {
+          id : 6,
+          url : "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/redsky.jpg",
+        },
+        {
+          id : 7,
+          url :  "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/sandy-shores.jpg",
+        },
+        {
+          id : 8,
+          url :  "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/tree-of-life.jpg",
+        }
+      ]
+    };
+    this.togglePopup = this.togglePopup.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
-
-
-  scroll(direction) {
-    let far = $('.image-container').width() / 2 * direction;
-    let pos = $('.image-container').scrollLeft() + far;
-    $('.image-container').animate({ scrollLeft: pos }, 1000)
+  togglePopup() {
+    this.setState({
+        showPopup: !this.state.showPopup
+    });
   }
-
+  handleClick(id) {
+    this.setState({
+      showPopup: !this.state.showPopup
+  });
+  }
   render() {
-    return <div className="main">
-      <h1 className="title">Scrolling Image Slider</h1>
-      <div className="wrapper">
-        <a className="prev" onClick={this.scroll.bind(null, -1)}>&#10094;</a>
-        <div className="image-container">
-          <div className="image">1</div>
-          <div className="image">2</div>
-          <div className="image">3</div>
-          <div className="image">4</div>
-          <div className="image">5</div>
-          <div className="image">6</div>
-          <div className="image">7</div>
-          <div className="image">8</div>
-          <div className="image">9</div>
-          <div className="image">10</div>
-        </div>
-        <a className="next" onClick={this.scroll.bind(null, 1)}>&#10095;</a>
+
+    return (
+      <div>
+        <ImageList clicker={this.handleClick} images = {this.state.images}/>
+        {this.state.showPopup ? <Popup closePopup={this.togglePopup.bind(this)} /> : null}
       </div>
-    </div>;
+
+    );
   }
 }
-
 ReactDOM.render(<App />, document.getElementById('app'));

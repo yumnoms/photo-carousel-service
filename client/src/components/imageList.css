@@ -1,0 +1,19 @@
+.title {
+  color: blueviolet
+
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  padding: 1px;
+}
+.imageDiv{
+  padding: 1px;
+  height: 250px;
+
+}
+
+.img {
+  max-height:100%;
+  height:auto;
+}

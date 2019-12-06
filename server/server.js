@@ -5,14 +5,14 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = 3000;
-
-app.use('/page', express.static(path.join(__dirname, '../client/dist')));
 app.listen(port, () => {
 
   console.log('Server is running on: ', port);
   db.initialize();
 
 });
+app.use('/page', express.static(path.join(__dirname, '../client/dist')));
+
 module.exports.app = app;
 app.get('/api/carousel/:id/', (req, res) => {
 
