@@ -1,0 +1,36 @@
+.rightButton{
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  position: absolute;
+  top: 17%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 16px;
+  padding: 12px 24px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+
+  text-align: center;
+}
+.leftButton{
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  position: absolute;
+  top: 17%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 16px;
+  padding: 12px 24px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+
+  text-align: center;
+}
