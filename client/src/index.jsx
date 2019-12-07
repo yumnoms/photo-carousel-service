@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ImageList from './components/ImageList.jsx';
 import Popup from './components/Popup.jsx';
+import RightIcon from './components/RightIcon.jsx';
+import LeftIcon from './components/LeftIcon.jsx';
+import style from './components/button.css';
 
 
 class App extends React.Component {
@@ -75,15 +78,19 @@ class App extends React.Component {
             <ImageList clicker={this.handleClick} images={this.state.images} />
             {this.state.showPopup ? <Popup closePopup={this.togglePopup.bind(this)} /> : null}
 
+            <button className={style.leftButton} onClick={() => this.handleScrollLeft()}>
+              <LeftIcon width={48} fill="white" ></LeftIcon>
+            </button>
+
+            <button className={style.rightButton} onClick={() => this.handleScrollRight()}>
+              <RightIcon width={48} fill="white" ></RightIcon>
+            </button>
+
+
+
           </div>
         </div>
 
-        <button onClick={() => this.handleScrollRight()}>
-          Scroll right
-        </button>
-        <button onClick={() => this.handleScrollLeft()}>
-          Scroll left
-        </button>
 
       </div>
 
