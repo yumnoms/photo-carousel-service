@@ -11,14 +11,21 @@ app.listen(port, () => {
   db.initialize();
 
 });
-app.use('/page', express.static(path.join(__dirname, '../client/dist')));
+app.use('/', express.static(path.join(__dirname, '../client/dist')));
+app.use('/:id', express.static(path.join(__dirname, '../client/dist')));
 
 module.exports.app = app;
-app.get('/api/carousel/:id/', (req, res) => {
+app.get('/api/carousel/:businessId/', (req, res) => {
+  console.log("get request with params", req.params);
+  controller.getImage(req.params).then((data) =>{
 
-  controller.getImage(req.params).then((data) =>
+    let values = [];
+    for (var i = 0; i < data.length; i++) {
+      values.push({id: data[i].dataValues.id, imageUrl: data[i].dataValues.imageUrl, });
+    }
+    console.log('I got data from a promise',values);
+  }
 
-    console.log('I got data from a promise', data[0].dataValues.imageUrl)
 
   );
 
