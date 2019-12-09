@@ -78,8 +78,21 @@
 
   text-align: center;
 }
-.rightGrid{
+.rightCol{
+  /* grid-template-columns: 1fr 1fr;
   overflow-y: auto;
-  display: flex;
+  display: flex;*/
   flex-direction: column;
+  display:flex;
+  overflow-y:auto;
+}
+
+.rightGrid{
+  display:grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(8, 300px);
+
+}
+.rightGrid img{
+
 }

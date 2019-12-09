@@ -14,7 +14,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       popUpId: 0,
-      showPopup: false,
+      showPopup: true,
       images: [
         {
           id: 0,
@@ -81,10 +81,10 @@ class App extends React.Component {
     });
   }
   handleScrollRight() {
-    document.getElementById("row").scrollLeft += 200;
+    document.getElementById("row").scrollLeft += 600;
   }
   handleScrollLeft() {
-    document.getElementById("row").scrollLeft -= 200;
+    document.getElementById("row").scrollLeft -= 600;
   }
   componentDidMount() {
     // console.log("component did mount")
