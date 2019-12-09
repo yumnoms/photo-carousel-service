@@ -24,12 +24,13 @@ app.get('/api/carousel/:businessId/', (req, res) => {
       values.push({id: data[i].dataValues.id, imageUrl: data[i].dataValues.imageUrl, });
     }
     console.log('I got data from a promise',values);
+    res.status(200).send(values);
   }
 
 
   );
 
-  res.status(200).send(req.params);
+
 
 });
 app.get('/', (req, res) => {

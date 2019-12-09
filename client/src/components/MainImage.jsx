@@ -1,5 +1,4 @@
 import React from 'react';
-import MainImage from './MainImage'
 class MainImage extends React.Component {
   render() {
     return (

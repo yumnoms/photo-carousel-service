@@ -8,14 +8,78 @@
   bottom: 0;
   margin: auto;
   background-color: rgba(0,0,0, 0.5);
+  z-index: 1004;
 }
 .popup_inner {
   position: absolute;
-  left: 25%;
-  right: 25%;
-  top: 25%;
-  bottom: 25%;
+  left: 5%;
+  right: 5%;
+  top: 10%;
+  bottom: 10%;
   margin: auto;
-  border-radius: 20px;
+  border-radius: 5px;
   background: white;
+}
+.img {
+  display:flex;
+  object-fit: cover;
+  max-width: 90%;
+  max-height: 90%;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 0;
+  overflow: hidden;
+  background-color: black;
+  height: 100%;
+}
+.imageDiv{
+  display:flex;
+  top: 5%;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+}
+.rightButton{
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 71%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 16px;
+  padding: 12px 24px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+
+  text-align: center;
+}
+.leftButton{
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 16px;
+  padding: 12px 24px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+
+  text-align: center;
+}
+.rightGrid{
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
