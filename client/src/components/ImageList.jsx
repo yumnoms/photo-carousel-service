@@ -8,7 +8,6 @@ class ImageList extends React.Component {
 }
   render() {
     console.log("props passed in", this.props);
-    const numbers = [1, 2, 3, 4, 5];
     const ImageSlides = this.props.images.map((image) =>
       <div className={style.imageDiv}>
         <img onClick= {()=>this.props.clicker(image.id)} className={style.img} src={image.url} />

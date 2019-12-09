@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ImageList from './components/ImageList.jsx';
@@ -7,6 +8,7 @@ import LeftIcon from './components/LeftIcon.jsx';
 import style from './components/button.css';
 
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -14,36 +16,48 @@ class App extends React.Component {
       showPopup: false,
       images: [
         {
+          id: 0,
+          url: "https://gpksingh.s3.us-east-2.amazonaws.com/0.jpg",
+        },
+        {
           id: 1,
-          url: "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/aurora.jpg",
+          url: "https://gpksingh.s3.us-east-2.amazonaws.com/1.jpg",
         },
         {
           id: 2,
-          url: "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/canyon.jpg",
+          url: "https://gpksingh.s3.us-east-2.amazonaws.com/2.jpg",
         },
         {
           id: 3,
-          url: "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/city.jpg",
+          url: "https://gpksingh.s3.us-east-2.amazonaws.com/3.jpg",
         },
         {
           id: 4,
-          url: "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/desert.jpg",
+          url: "https://gpksingh.s3.us-east-2.amazonaws.com/4.jpg",
         },
         {
           id: 5,
-          url: "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/mountains.jpg",
+          url: "https://gpksingh.s3.us-east-2.amazonaws.com/5.jpg",
         },
         {
           id: 6,
-          url: "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/redsky.jpg",
+          url: "https://gpksingh.s3.us-east-2.amazonaws.com/6.jpg",
         },
         {
           id: 7,
-          url: "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/sandy-shores.jpg",
+          url: "https://gpksingh.s3.us-east-2.amazonaws.com/7.jpg",
         },
         {
           id: 8,
-          url: "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/tree-of-life.jpg",
+          url: "https://gpksingh.s3.us-east-2.amazonaws.com/8.jpg",
+        },
+        {
+          id: 9,
+          url: "https://gpksingh.s3.us-east-2.amazonaws.com/9.jpg",
+        },
+        {
+          id: 10,
+          url: "https://gpksingh.s3.us-east-2.amazonaws.com/10.jpg",
         }
       ]
     };
@@ -68,13 +82,23 @@ class App extends React.Component {
   handleScrollLeft() {
     document.getElementById("row").scrollLeft -= 200;
   }
+  componentDidMount() {
+    let endpoint = window.location.pathname.split('/')[1];
+    axios.get(`/api/carousel/${endpoint}`)
+      .then((data) => {
+
+        console.log("the state of the images is now", this.state.images)
+
+      });
+  }
+
   render() {
 
     return (
       <div>
-
         <div>
           <div>
+
             <ImageList clicker={this.handleClick} images={this.state.images} />
             {this.state.showPopup ? <Popup closePopup={this.togglePopup.bind(this)} /> : null}
 

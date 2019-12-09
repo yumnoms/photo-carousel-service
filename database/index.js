@@ -17,8 +17,9 @@ const Users = sequelize.define('users', {
 });
 
 const Businesses = sequelize.define('businesses', {
-  name: { type: Sequelize.STRING }
+  name: { type: Sequelize.STRING}
 });
+
 
 const Images = sequelize.define('images', {
   imageUrl: { type: Sequelize.STRING },
@@ -29,6 +30,7 @@ const Images = sequelize.define('images', {
   businessId: { type: Sequelize.INTEGER }, //This needs to be foreign key refference
   usersId: { type: Sequelize.INTEGER } //This needs to be foreign key refference
 });
+
 
 
 //This is called when server is running
