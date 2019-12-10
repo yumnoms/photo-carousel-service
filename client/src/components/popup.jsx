@@ -75,11 +75,8 @@ class Popup extends React.Component {
 
               <PopupRight cb={this.handleClick} images={this.props.images} id={this.state.imageIndex}></PopupRight>
 
-
             </div>
-
           </div>
-
           <button onClick={this.props.closePopup}>close me</button>
         </div>
 

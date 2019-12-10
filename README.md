@@ -17,7 +17,10 @@
 
 ## Usage
 
-> Some usage instructions
+> NPM Install
+> mysql -u root < schema.sql //To create mysql database yelpPhotoGallery
+> npm run seed //To seed
+> npm run start //To run server
 
 ## Requirements
 
