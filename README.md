@@ -17,10 +17,11 @@
 
 ## Usage
 
-> NPM Install
+> npm install nodemon
+> npm install
 > mysql -u root < schema.sql //To create mysql database yelpPhotoGallery
-> npm run seed //To seed
-> npm run start //To run server
+> npm run seed //To seed database
+> npm run start //To run server on http://localhost:3002/
 
 ## Requirements
 
