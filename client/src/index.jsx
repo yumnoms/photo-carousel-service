@@ -81,10 +81,10 @@ class App extends React.Component {
     });
   }
   handleScrollRight() {
-    document.getElementById("row").scrollLeft += 600;
+    document.getElementById("row").scrollLeft += 1680;
   }
   handleScrollLeft() {
-    document.getElementById("row").scrollLeft -= 600;
+    document.getElementById("row").scrollLeft -= 1680;
   }
   componentDidMount() {
 
