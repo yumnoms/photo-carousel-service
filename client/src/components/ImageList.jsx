@@ -10,7 +10,7 @@ class ImageList extends React.Component {
     console.log("props passed in", this.props);
     const ImageSlides = this.props.images.map((image) =>
       <div className={style.imageDiv}>
-        <img onClick= {()=>this.props.clicker(image.id)} className={style.img} src={image.url} />
+        <img onClick= {()=>this.props.clicker(image.id)} className={style.img} src={image.imageUrl} />
       </div>
     );
     return (

@@ -13,51 +13,52 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showPopup: false,
+      popUpId: 0,
+      showPopup: true,
       images: [
         {
           id: 0,
-          url: "https://gpksingh.s3.us-east-2.amazonaws.com/0.jpg",
+          imageUrl: "https://gpksingh.s3.us-east-2.amazonaws.com/0.jpg",
         },
         {
           id: 1,
-          url: "https://gpksingh.s3.us-east-2.amazonaws.com/1.jpg",
+          imageUrl: "https://gpksingh.s3.us-east-2.amazonaws.com/1.jpg",
         },
         {
           id: 2,
-          url: "https://gpksingh.s3.us-east-2.amazonaws.com/2.jpg",
+          imageUrl: "https://gpksingh.s3.us-east-2.amazonaws.com/2.jpg",
         },
         {
           id: 3,
-          url: "https://gpksingh.s3.us-east-2.amazonaws.com/3.jpg",
+          imageUrl: "https://gpksingh.s3.us-east-2.amazonaws.com/3.jpg",
         },
         {
           id: 4,
-          url: "https://gpksingh.s3.us-east-2.amazonaws.com/4.jpg",
+          imageUrl: "https://gpksingh.s3.us-east-2.amazonaws.com/4.jpg",
         },
         {
           id: 5,
-          url: "https://gpksingh.s3.us-east-2.amazonaws.com/5.jpg",
+          imageUrl: "https://gpksingh.s3.us-east-2.amazonaws.com/5.jpg",
         },
         {
           id: 6,
-          url: "https://gpksingh.s3.us-east-2.amazonaws.com/6.jpg",
+          imageUrl: "https://gpksingh.s3.us-east-2.amazonaws.com/6.jpg",
         },
         {
           id: 7,
-          url: "https://gpksingh.s3.us-east-2.amazonaws.com/7.jpg",
+          imageUrl: "https://gpksingh.s3.us-east-2.amazonaws.com/7.jpg",
         },
         {
           id: 8,
-          url: "https://gpksingh.s3.us-east-2.amazonaws.com/8.jpg",
+          imageUrl: "https://gpksingh.s3.us-east-2.amazonaws.com/8.jpg",
         },
         {
           id: 9,
-          url: "https://gpksingh.s3.us-east-2.amazonaws.com/9.jpg",
+          imageUrl: "https://gpksingh.s3.us-east-2.amazonaws.com/9.jpg",
         },
         {
           id: 10,
-          url: "https://gpksingh.s3.us-east-2.amazonaws.com/10.jpg",
+          imageUrl: "https://gpksingh.s3.us-east-2.amazonaws.com/10.jpg",
         }
       ]
     };
@@ -72,22 +73,28 @@ class App extends React.Component {
     });
   }
   handleClick(id) {
+    console.log("I got an id", id);
+    this.state.popUpId = id;
+
     this.setState({
       showPopup: !this.state.showPopup
     });
   }
   handleScrollRight() {
-    document.getElementById("row").scrollLeft += 200;
+    document.getElementById("row").scrollLeft += 600;
   }
   handleScrollLeft() {
-    document.getElementById("row").scrollLeft -= 200;
+    document.getElementById("row").scrollLeft -= 600;
   }
   componentDidMount() {
+    // console.log("component did mount")
     let endpoint = window.location.pathname.split('/')[1];
     axios.get(`/api/carousel/${endpoint}`)
       .then((data) => {
 
-        console.log("the state of the images is now", this.state.images)
+        // console.log("the state of the images is now", data);
+        // this.setState({images: data.data},()=>
+        //   console.log("the data of setstate is", this.state.images));
 
       });
   }
@@ -100,7 +107,7 @@ class App extends React.Component {
           <div>
 
             <ImageList clicker={this.handleClick} images={this.state.images} />
-            {this.state.showPopup ? <Popup closePopup={this.togglePopup.bind(this)} /> : null}
+            {this.state.showPopup ? <Popup id = {this.state.popUpId} images={this.state.images} closePopup={this.togglePopup.bind(this)} /> : null}
 
             <button className={style.leftButton} onClick={() => this.handleScrollLeft()}>
               <LeftIcon width={48} fill="white" ></LeftIcon>
