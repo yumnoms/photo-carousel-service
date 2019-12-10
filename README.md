@@ -18,11 +18,6 @@
 ## Usage
 Run the following commands in terminal:
 
-Install nodemon:
-
-```sh
- npm install nodemon
-```
 
 Install all other dependencies:
 
