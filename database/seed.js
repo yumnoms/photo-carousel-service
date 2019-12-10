@@ -10,7 +10,7 @@ const seed = {
 const url = 'https://gpksingh.s3.us-east-2.amazonaws.com/';
 photoArray = [];
 
-for (var i = 0; i < 11; i++) {
+for (var i = 0; i < 101; i++) {
   photoArray.push(`${url}${i}.jpg`);
 }
 
@@ -39,7 +39,7 @@ for (let i = 0; i < 100; i += 1) {
   };
   for (var j = 0; j < 10; j++) {
     const images = {
-      imageUrl: photoArray[faker.random.number(10)],
+      imageUrl: photoArray[faker.random.number(100)],
       helpFullCount: faker.random.number(10),
       notHelpfullCount: faker.random.number(10),
       description: faker.random.alphaNumeric(30),
