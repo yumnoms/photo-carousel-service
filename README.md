@@ -30,7 +30,7 @@ Install all other dependencies:
  npm install //To install dependencies
 ```
 ```sh
- mysql -u root < schema.sql //To create mysql database yelpPhotoGallery
+  mysql -u student -p < schema.sql  // password is student
 ```
 
 ```sh
