@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('yelpPhotoGallery', 'root', '', {
+const sequelize = new Sequelize('yelpPhotoGallery', 'student', 'student', {
   host: 'localhost',
   dialect: 'mysql',
   define: {
