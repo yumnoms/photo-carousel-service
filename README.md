@@ -35,7 +35,7 @@ Install all other dependencies:
 
 ```sh
   npm run seed //To seed database
-  > npm run start //To run server on http://localhost:3002/
+  npm run start //To run server on http://localhost:3002/
 ```
 
 
