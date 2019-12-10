@@ -16,11 +16,28 @@
 1. [Development](#development)
 
 ## Usage
+Run the following commands in terminal:
 
-> NPM Install
-> mysql -u root < schema.sql //To create mysql database yelpPhotoGallery
-> npm run seed //To seed
-> npm run start //To run server
+Install nodemon:
+
+```sh
+ npm install nodemon
+```
+
+Install all other dependencies:
+
+```sh
+ npm install //To install dependencies
+```
+```sh
+ mysql -u root < schema.sql //To create mysql database yelpPhotoGallery
+```
+
+```sh
+  npm run seed //To seed database
+  > npm run start //To run server on http://localhost:3002/
+```
+
 
 ## Requirements
 
