@@ -11,7 +11,6 @@ class PopupRight extends React.Component {
 
   }
   componentDidMount() {
-    // console.log("In Popup: I got images", this.props.images);
 
     this.setState({ images: this.props.images, imageIndex: this.props.id });
   }
