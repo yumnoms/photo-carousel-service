@@ -14,7 +14,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       popUpId: 0,
-      showPopup: true,
+      showPopup: false,
       images: [
         {
           id: 0,
@@ -87,14 +87,14 @@ class App extends React.Component {
     document.getElementById("row").scrollLeft -= 600;
   }
   componentDidMount() {
-    // console.log("component did mount")
+    console.log("component did mount")
     let endpoint = window.location.pathname.split('/')[1];
     axios.get(`/api/carousel/${endpoint}`)
       .then((data) => {
 
-        // console.log("the state of the images is now", data);
-        // this.setState({images: data.data},()=>
-        //   console.log("the data of setstate is", this.state.images));
+        console.log("the state of the images is now", data);
+        this.setState({images: data.data},()=>
+          console.log("the data of setstate is", this.state.images));
 
       });
   }
@@ -107,7 +107,7 @@ class App extends React.Component {
           <div>
 
             <ImageList clicker={this.handleClick} images={this.state.images} />
-            {this.state.showPopup ? <Popup id = {this.state.popUpId} images={this.state.images} closePopup={this.togglePopup.bind(this)} /> : null}
+            {this.state.showPopup ? <Popup clicker={this.handleClick} id = {this.state.popUpId} images={this.state.images} closePopup={this.togglePopup.bind(this)} /> : null}
 
             <button className={style.leftButton} onClick={() => this.handleScrollLeft()}>
               <LeftIcon width={48} fill="white" ></LeftIcon>

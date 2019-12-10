@@ -19,8 +19,7 @@ class Popup extends React.Component {
   componentDidMount() {
     // console.log("Component in popup");
     // console.log("I got an id in PopUP", this.props.id);
-    this.setState({ images: this.props.images, imageIndex: this.props.id }, () =>
-      console.log("the data of setstate is", this.state.images));
+    this.setState({ images: this.props.images, imageIndex: this.props.id });
 
   }
   handleScrollLeft() {
@@ -28,33 +27,33 @@ class Popup extends React.Component {
     if (this.state.imageIndex !== 0) {
       this.setState({ imageIndex: this.state.imageIndex -= 1 });
     }
-    console.log("Image Index is", this.state.imageIndex);
+    // console.log("Image Index is", this.state.imageIndex);
   }
   handleScrollRight() {
-    console.log("Scroll right clicked");
+    // console.log("Scroll right clicked");
     if (this.state.imageIndex < this.state.images.length - 1) {
-      console.log("Scroll right clicked")
+      // console.log("Scroll right clicked")
       this.setState({ imageIndex: this.state.imageIndex += 1 });
     }
-    console.log("Image Index is", this.state.imageIndex);
+    // console.log("Image Index is", this.state.imageIndex);
   }
 
   handleClick(id) {
-    console.log("I got an id", id);
+    // console.log("I got an id", id);
     this.setState({imageIndex:id});
   }
 
   render() {
 
-    const ImageSlides = this.state.images.map((image, index) =>
+    const ImageSlides = this.props.images.map((image, index) =>
       <div className={style.imageDiv}>
         <img className={style.img} src={image.imageUrl} />
       </div>
     );
 
     const t1 = <h1>Test</h1>
-    console.log("The image index is", this.state.imageIndex);
-    console.log(this.state.images[this.state.imageIndex]);
+    // console.log("The image index is", this.state.imageIndex);
+    // console.log(this.state.images[this.state.imageIndex]);
     return (
       <div className={style.popup}>
 
@@ -73,7 +72,6 @@ class Popup extends React.Component {
             </button>
 
             <div className={style.rightCol}>
-
 
               <PopupRight cb={this.handleClick} images={this.props.images} id={this.state.imageIndex}></PopupRight>
 

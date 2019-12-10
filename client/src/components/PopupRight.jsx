@@ -10,19 +10,21 @@ class PopupRight extends React.Component {
     };
 
   }
-
   componentDidMount() {
-    console.log("In Popup: I got images", this.props.images);
+    // console.log("In Popup: I got images", this.props.images);
 
-    this.setState({ images: this.props.images, imageIndex: this.props.id }, () =>
-      console.log("In Popup right: the data of setstate is", this.state.images, "index", this.state.imageIndex));
+    this.setState({ images: this.props.images, imageIndex: this.props.id });
   }
+
   render() {
+
     const ImageSlides = this.state.images.map((image, index) =>
       <div className = {style.imgDiv}>
         <img onClick = {()=>{this.props.cb(index)}} className = {style.img} src={image.imageUrl} />
       </div>
+
     );
+
     return (
       <div id = "right">
         {ImageSlides}

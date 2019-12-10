@@ -21,7 +21,7 @@ app.get('/api/carousel/:businessId/', (req, res) => {
 
     let values = [];
     for (var i = 0; i < data.length; i++) {
-      values.push({id: data[i].dataValues.id, imageUrl: data[i].dataValues.imageUrl, });
+      values.push({id: i, imageUrl: data[i].dataValues.imageUrl, });
     }
     console.log('I got data from a promise',values);
     res.status(200).send(values);
